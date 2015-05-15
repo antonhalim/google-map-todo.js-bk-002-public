@@ -33,9 +33,9 @@ describe "Index" do
     expect(page.all(".gm-style-mtc")[-1].text).to eq("Satellite")
     container = page.all(".gmnoprint")[0]
     messages.each { |msg| expect(container.text).to include(msg) }
-    
+
     map_canvas_html = page.evaluate_script("document.getElementById('map_canvas').innerHTML")
     expect(map_canvas_html).to_not include(spinner)
   end
-  
+
 end
